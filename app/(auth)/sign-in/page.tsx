@@ -133,7 +133,7 @@ export default function LoginPage() {
 
       <footer className="border-t bg-white">
         <div className="mx-auto max-w-7xl px-4 py-4 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
-          © {new Date().getFullYear()} SiGeDo Municipal
+          © {new Date().getFullYear()} Hermes
         </div>
       </footer>
     </div>
