@@ -13,7 +13,7 @@ const CallToActionSection = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild className="bg-primary text-white hover:bg-primary/90">
-                <Link href="/app">
+                <Link href="/documents">
                   Probar demo
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

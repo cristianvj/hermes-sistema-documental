@@ -4,8 +4,9 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { FolderKey, Menu, X } from 'lucide-react'
+import { FolderKey, Menu, X, ArrowBigLeft } from 'lucide-react'
 import { useEffect, useState } from "react"
+import path from "path"
 
 const links = [
   { href: "#features", label: "Características" },
@@ -18,6 +19,7 @@ export function SiteHeader() {
   const pathname = usePathname()
   const onLanding = pathname === "/"
   const [mobileOpen, setMobileOpen] = useState(false)
+  const isLoginPage = path.basename(pathname) === "login"
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -54,13 +56,19 @@ export function SiteHeader() {
             )
           })}
         </nav>
-
         <div className="hidden items-center gap-2 md:flex">
-          <Button asChild>
-            <Link href="/sign-in" aria-label="Iniciar sesión">Iniciar sesión</Link>
-          </Button>
+          { 
+            isLoginPage ? (
+              <Button asChild variant={"secondary"}>
+                  <Link href="/" aria-label="Volver a inicio"> <ArrowBigLeft/> Volver a inicio</Link>
+              </Button>
+            ) : (
+                <Button asChild>
+                  <Link href="/login" aria-label="Iniciar sesión">Iniciar sesión</Link>
+                </Button>
+            )
+          }
         </div>
-
         {/* Mobile actions */}
         <div className="flex items-center gap-2 md:hidden">
           <Button
@@ -100,9 +108,15 @@ export function SiteHeader() {
             })}
           </nav>
           <div className="mt-4 grid gap-2">
-            <Button asChild className="w-full">
-              <Link href="/sign-in" aria-label="Iniciar sesión">Iniciar sesión</Link>
-            </Button>
+            {isLoginPage ? (
+              <Button asChild variant={"secondary"} className="w-full">
+                <Link href="/" aria-label="Volver a inicio"> <ArrowBigLeft/> Volver a inicio</Link>
+              </Button>
+            ) : (
+              <Button asChild className="w-full">
+                <Link href="/login" aria-label="Iniciar sesión">Iniciar sesión</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>

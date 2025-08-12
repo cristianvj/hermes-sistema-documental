@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, LogIn } from 'lucide-react'
+import { LogIn } from 'lucide-react'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -42,23 +42,11 @@ export default function LoginPage() {
       sessionStorage.setItem("sigd_session", JSON.stringify(session))
     }
 
-    router.push("/app")
+    router.push("/documents")
   }
 
   return (
-    <div className="grid min-h-screen grid-rows-[auto_1fr_auto] bg-white">
-      <header className="border-b bg-white">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-2 text-violet-900 " aria-label="Ir a inicio">
-            <Shield className="h-6 w-6" />
-            <span className="font-semibold">Hermes</span>
-          </Link>
-          <Button variant="ghost" asChild>
-            <Link href="/">Volver</Link>
-          </Button>
-        </div>
-      </header>
-
+   
       <main className="flex items-center justify-center px-4 py-10">
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1">
@@ -130,12 +118,5 @@ export default function LoginPage() {
           </CardContent>
         </Card>
       </main>
-
-      <footer className="border-t bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-4 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
-          © {new Date().getFullYear()} Hermes
-        </div>
-      </footer>
-    </div>
   )
 }

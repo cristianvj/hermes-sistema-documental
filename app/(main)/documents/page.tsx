@@ -143,7 +143,7 @@ export default function HermesApp() {
                     localStorage.removeItem("sigd_session")
                     sessionStorage.removeItem("sigd_session")
                   } catch {}
-                  router.push("/sign-in")
+                  router.push("/login")
                 }}
               >
                 <LogOut className="mr-2 h-4 w-4" />

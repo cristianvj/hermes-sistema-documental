@@ -15,7 +15,7 @@ export function AuthGuard({ children }: { readonly children: React.ReactNode }) 
   useEffect(() => {
     const session = typeof window !== "undefined" ? localStorage.getItem("sigd_session") : null
     if (!session) {
-      router.replace("/sign-in")
+      router.replace("/login")
     } else {
       setReady(true)
     }
