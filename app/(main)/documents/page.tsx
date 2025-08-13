@@ -111,49 +111,6 @@ export default function HermesApp() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <Shield className="h-8 w-8 text-blue-600" />
-                <h1 className="text-2xl font-bold text-gray-900">Hermes</h1>
-              </div>
-              <Badge variant="secondary">Sistema de Gestión Documental</Badge>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Button variant="outline" size="sm" asChild>
-                <Link href="/app/users" aria-label="Gestionar usuarios">
-                  <Users className="h-4 w-4 mr-2" />
-                  Usuarios
-                </Link>
-              </Button>
-              <Button variant="outline" size="sm" asChild>
-                <Link href="/app/reports" aria-label="Ver reportes">
-                  <BarChart3 className="h-4 w-4 mr-2" />
-                  Reportes
-                </Link>
-              </Button>
-              <Button
-                variant="destructive"
-                size="sm"
-                onClick={() => {
-                  try {
-                    localStorage.removeItem("sigd_session")
-                    sessionStorage.removeItem("sigd_session")
-                  } catch {}
-                  router.push("/login")
-                }}
-              >
-                <LogOut className="mr-2 h-4 w-4" />
-                Cerrar sesión
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Dashboard Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">

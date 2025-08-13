@@ -45,30 +45,7 @@ export default function UsersPage() {
     s === "Activo" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Simple header for the users section */}
-      <header className="border-b bg-white">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <Shield className="h-6 w-6 text-blue-600" />
-            <span className="text-lg font-semibold">Hermes</span>
-            <span className="text-muted-foreground">/ Usuarios</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" asChild>
-              <Link href="/app">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Volver al panel
-              </Link>
-            </Button>
-            <Button className="hidden sm:flex" disabled>
-              <Plus className="mr-2 h-4 w-4" />
-              Agregar usuario
-            </Button>
-          </div>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-gray-50">   
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-6 flex items-center justify-between">
           <h1 className="flex items-center gap-2 text-2xl font-bold">
