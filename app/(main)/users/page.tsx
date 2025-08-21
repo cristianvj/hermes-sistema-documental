@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Shield, Users, Plus, ArrowLeft, SearchIcon } from 'lucide-react'
+import { Users, Plus, SearchIcon } from 'lucide-react'
 
 type User = {
   id: string
@@ -45,7 +45,7 @@ export default function UsersPage() {
     s === "Activo" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
 
   return (
-    <div className="min-h-screen bg-gray-50">   
+    <div className="min-h-screen bg-gray-50">
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-6 flex items-center justify-between">
           <h1 className="flex items-center gap-2 text-2xl font-bold">
@@ -72,7 +72,7 @@ export default function UsersPage() {
               </div>
               <div>
                 <Label className="sr-only" htmlFor="role">Rol</Label>
-                <Select value={role} onValueChange={(v: any) => setRole(v)}>
+                <Select value={role} onValueChange={(v: "Administrador" | "Revisor" | "Lector" | "all") => setRole(v)}>
                   <SelectTrigger id="role">
                     <SelectValue placeholder="Rol" />
                   </SelectTrigger>
@@ -86,7 +86,7 @@ export default function UsersPage() {
               </div>
               <div>
                 <Label className="sr-only" htmlFor="status">Estado</Label>
-                <Select value={status} onValueChange={(v: any) => setStatus(v)}>
+                <Select value={status} onValueChange={(v: "Activo" | "Suspendido" | "all") => setStatus(v)}>
                   <SelectTrigger id="status">
                     <SelectValue placeholder="Estado" />
                   </SelectTrigger>

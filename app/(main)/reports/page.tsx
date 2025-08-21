@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { useMemo, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -10,7 +9,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Progress } from "@/components/ui/progress"
-import { Shield, ArrowLeft, Download, BarChart3, Calendar, Filter, FileText, Scan, Search } from 'lucide-react'
+import { Download, BarChart3, Calendar, Filter, FileText, Search } from 'lucide-react'
 
 type CategorySummary = {
   category: string
@@ -116,7 +115,7 @@ export default function ReportsPage() {
                 <Label className="sr-only" htmlFor="status">
                   Estado
                 </Label>
-                <Select value={status} onValueChange={(v: any) => setStatus(v)}>
+                <Select value={status} onValueChange={(v) => setStatus(v as "all" | "Activo" | "En Revisión" | "Archivado")}>
                   <SelectTrigger id="status">
                     <SelectValue placeholder="Estado" />
                   </SelectTrigger>
@@ -203,7 +202,6 @@ export default function ReportsPage() {
                         className="w-6 rounded-t bg-emerald-600"
                         style={{ height: `${h}px` }}
                         aria-label={`Barra ${t.label} con valor ${t.value}`}
-                        role="img"
                       />
                       <span className="mt-2 text-xs text-muted-foreground">{t.label}</span>
                     </div>
