@@ -46,77 +46,76 @@ export default function LoginPage() {
   }
 
   return (
-   
-      <main className="flex items-center justify-center px-4 py-10">
-        <Card className="w-full max-w-md">
-          <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl">Iniciar sesión</CardTitle>
-            <CardDescription>Accede al sistema de gestión documental</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={onSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Correo electrónico</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  placeholder="alcaldia@municipio.gov"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
+    <main className="flex items-center justify-center px-4 py-10 sm:px-6 bg-muted min-h-[calc(100vh-19rem)]">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-2xl">Iniciar sesión</CardTitle>
+          <CardDescription>Accede al sistema de gestión documental</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={onSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="email">Correo electrónico</Label>
+              <Input
+                id="email"
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                placeholder="alcaldia@municipio.gov"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">Contraseña</Label>
+              <Input
+                id="password"
+                type="password"
+                autoComplete="current-password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  id="remember"
+                  checked={remember}
+                  onCheckedChange={(v) => setRemember(Boolean(v))}
                 />
+                <Label htmlFor="remember" className="text-sm text-muted-foreground">
+                  Recordarme
+                </Label>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="password">Contraseña</Label>
-                <Input
-                  id="password"
-                  type="password"
-                  autoComplete="current-password"
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Checkbox
-                    id="remember"
-                    checked={remember}
-                    onCheckedChange={(v) => setRemember(Boolean(v))}
-                  />
-                  <Label htmlFor="remember" className="text-sm text-muted-foreground">
-                    Recordarme
-                  </Label>
-                </div>
-                <Link href="#" className="text-sm text-violet-700 hover:underline">
-                  ¿Olvidaste tu contraseña?
-                </Link>
-              </div>
+              <Link href="#" className="text-sm text-violet-700 hover:underline">
+                ¿Olvidaste tu contraseña?
+              </Link>
+            </div>
 
-              {error && (
-                <p role="alert" className="text-sm text-red-600">
-                  {error}
-                </p>
-              )}
-
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full"
-              >
-                <LogIn className="mr-2 h-4 w-4" />
-                {loading ? "Ingresando…" : "Ingresar"}
-              </Button>
-
-              <p className="text-center text-xs text-muted-foreground">
-                Demo: puedes usar cualquier correo y una contraseña de 6 caracteres
+            {error && (
+              <p role="alert" className="text-sm text-red-600">
+                {error}
               </p>
-            </form>
-          </CardContent>
-        </Card>
-      </main>
+            )}
+
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full"
+            >
+              <LogIn className="mr-2 h-4 w-4" />
+              {loading ? "Ingresando…" : "Ingresar"}
+            </Button>
+
+            <p className="text-center text-xs text-muted-foreground">
+              Demo: puedes usar cualquier correo y una contraseña de 6 caracteres
+            </p>
+          </form>
+        </CardContent>
+      </Card>
+    </main>
   )
 }
