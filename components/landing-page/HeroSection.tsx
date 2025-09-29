@@ -5,12 +5,12 @@ import { ArrowRight, Shield, Server } from 'lucide-react'
 import Image from 'next/image'
 
 const HeroSection = () => {
-  return (
-			<section className="border-b bg-gradient-to-b from-violet-100/40 to-white">
+	return (
+		<section className="border-b bg-gradient-to-b from-violet-100/40 to-white">
 			<div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:py-24 lg:px-8">
 				<div className="space-y-6">
 					<h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
-						Gestión documental municipal simple, segura y escalable
+						Gestión Documental municipal simple, segura y escalable
 					</h1>
 					<p className="text-balance text-muted-foreground">
 						Centraliza decretos, ordenanzas, actas y más. Escanea, indexa y encuentra documentos en segundos,
@@ -51,7 +51,7 @@ const HeroSection = () => {
 				</div>
 			</div>
 		</section>
-  )
+	)
 }
 
 export default HeroSection
