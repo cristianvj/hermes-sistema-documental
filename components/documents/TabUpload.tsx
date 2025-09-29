@@ -11,6 +11,11 @@ import { Textarea } from '../ui/textarea'
 
 const TabUpload = () => {
 	const { UPLOAD } = tabsValues;
+
+	const handleUploadFile = () => {
+		// Lógica para manejar la subida de archivos
+		alert('Función de subir archivo no implementada.')
+	}
 	return (
 		<TabsContent value={UPLOAD} className="space-y-6">
 			<Card>
@@ -81,7 +86,7 @@ const TabUpload = () => {
 						<Upload className="h-12 w-12 text-gray-400 mx-auto mb-4" />
 						<h3 className="text-lg font-medium text-gray-900 mb-2">Subir Archivo</h3>
 						<p className="text-gray-500 mb-4">Arrastra y suelta tu archivo aquí, o haz clic para seleccionar</p>
-						<Button>Seleccionar Archivo</Button>
+						<Button onClick={handleUploadFile}>Seleccionar Archivo</Button>
 						<p className="text-sm text-gray-400 mt-2">
 							Formatos soportados: PDF, DOC, DOCX, JPG, PNG (Máx. 10MB)
 						</p>
